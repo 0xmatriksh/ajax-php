@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Practice</title>
+    
+</head>
+<body>
+    <form action="">
+        <input type="text" id="word" onkeyup="myfunc(this.value)"><br>
+        <button>Submit</button>
+        <p>Finding : <span id="words"></span></p>
+    </form>
+    <script>
+        var words = ['hello','hi','hey']
+
+        function myfunc(word){
+
+            list_words = ' '
+            var l_word = word.length
+            
+            words.forEach(nword => {
+                if(word == nword.slice(0,l_word)){
+                    list_words = list_words.concat(' ',nword)
+                }
+            });
+
+            document.getElementById('words').innerText = list_words
+        }
+    </script>
+</body>
+</html>
